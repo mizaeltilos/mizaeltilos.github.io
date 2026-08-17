@@ -13,44 +13,57 @@
     @theme {
       
       /* COLOR ROOT */
-      --color-primary: #C9A86A;
-      --color-secondary: #E8D8B5;
-      --color-bg: #121212;
-      --color-surface: #1C1C1C;
-      --color-text: #F5F3EE;
-      --color-text-muted: #A7A7A7;
-      --color-border: #2D2D2D;
+      --color-primary: #C9A86A;      /* Accent, buttons, highlights */
+      --color-background: #121212;   /* Main background */
+      --color-text: #F5F3EE;         /* Main text */
+      --color-surface: #1C1C1C;      /* Cards, secondary sections */
+      --color-muted: #A7A7A7;        /* Secondary text, descriptions */
+
       /* FONT ROOT */
-      --font-primary: "Manrope", sans-serif;
+      --font-primary: "Manrope", sans-serif;    
       --font-secondary: "Inter", sans-serif;
       --font-accent: "Playfair Display", serif;
     }
   </style>
 </head>
-<body>
-  
+<body class="bg-background">
+
 <!-- HEADER SECTION -->
   <header class="m-3">
-    <nav class="flex flex-row justify-between mt-2">
-      <a class="font-bold font-primary" href="">MIZAEL TILOS</a>
+    <nav class="text-text flex flex-row justify-between mt-2">
+      <a class="font-primary font-bold" href="">MIZAEL TILOS</a>
       
-      <div class="relative"> 
+      <div class="relative text-text"> 
         <input class="hidden peer flex items-center" type="checkbox" name="" id="menu-toggle">
         <label for="menu-toggle">
           <i class="fa-solid fa-bars lg:hidden"></i>
         </label>
-        <div class="hidden lg:flex cursor-pointer peer-checked:flex flex-col lg:flex-row gap-3 padding-5 items-end absolute lg:static right-3 top-6 border lg:border-0 w-25 lg:w-auto bg-white lg:bg-transparent">
-          <a href="">DEVELOPER</a>
-          <a href="">ACTOR</a>
-          <a href="">MUSICIAN</a>
+        <div class="absolute lg:static right-3 top-6 hidden peer-checked:flex lg:flex flex-col lg:flex-row items-end gap-3 lg:gap-10 text-text cursor-pointer   padding-5 border lg:border-0 w-25 lg:w-auto lg:bg-transparent">
+          <a class="hover:text-[var(--color-primary)] hover:underline " href="">DEVELOPER</a>
+          <a class="hover:text-[var(--color-primary)] hover:underline" href="">ACTOR</a>
+          <a class="hover:text-[var(--color-primary)] hover:underline" href="">MUSICIAN</a>
         </div>
       </div>
-        
-      
-      
-
     </nav>
   </header>
+  
+<!-- HERO SECTION -->
+  <main>
+    <div class="relative ">
+      <img class="" src="images/hero-photo.png" alt="mizael">
+      <div class="absolute inset-3 flex flex-col items-start justify-center">
+        <span class="text-text text-4xl font-bold">MIZAEL</span>
+        <span class="text-text text-4xl font-bold">TILOS</span>
+        <span class="text-muted text-xs ">WEB DEVELOPER & CREATIVE</span>
+        <span class="text-muted">I build clean, responsive websites with</span>
+        <span class="text-muted">a focus on thoughtful design and</span>
+        <span class="text-muted">user experience</span>
+        <button class="text-text bg-[var(--color-primary)]">VIEW MY WORK</button>
+      </div>
+    </div>
+     
+
+  </main>
 
 </body>
 </html>
