@@ -26,44 +26,76 @@
     }
   </style>
 </head>
-<body class="bg-background">
 
-<!-- HEADER SECTION -->
-  <header class="m-3">
-    <nav class="text-text flex flex-row justify-between mt-2">
-      <a class="font-primary font-bold" href="">MIZAEL TILOS</a>
-      
-      <div class="relative text-text"> 
-        <input class="hidden peer flex items-center" type="checkbox" name="" id="menu-toggle">
-        <label for="menu-toggle">
-          <i class="fa-solid fa-bars lg:hidden"></i>
+<body class="min-h-screen bg-background text-text">
+
+  <!-- HEADER SECTION-->
+  <header class="relative z-50 m-3">
+    <nav class="flex items-center justify-between text-text">
+      <a class="font-primary text-xs font-bold" href="">MIZAEL TILOS</a>
+
+      <div class="relative">
+        <!-- HAMBURGER ICON -->
+        <input class="peer hidden" type="checkbox" id="menu-toggle">
+        <label class="cursor-pointer text-text lg:hidden" for="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
         </label>
-        <div class="absolute lg:static right-3 top-6 hidden peer-checked:flex lg:flex flex-col lg:flex-row items-end gap-3 lg:gap-10 text-text cursor-pointer   padding-5 border lg:border-0 w-25 lg:w-auto lg:bg-transparent">
-          <a class="hover:text-[var(--color-primary)] hover:underline " href="">DEVELOPER</a>
-          <a class="hover:text-[var(--color-primary)] hover:underline" href="">ACTOR</a>
-          <a class="hover:text-[var(--color-primary)] hover:underline" href="">MUSICIAN</a>
+
+        <!-- NAV LINKS -->
+        <div class="absolute right-0 top-7 hidden w-25 flex-col items-end gap-4 bg-surface p-5 peer-checked:flex lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-10 lg:bg-transparent lg:p-0">
+          <a class="text-xs text-text transition-colors duration-1  hover:text-[var(--color-primary)] hover:underline" href="">DEVELOPER</a>
+          <a class="text-xs text-text transition-colors duration-200 hover:text-[var(--color-primary)] hover:underline" href="">ACTOR</a>
+          <a class="text-xs text-text transition-colors duration-200 hover:text-[var(--color-primary)] hover:underline" href="">MUSICIAN</a>
         </div>
       </div>
     </nav>
   </header>
-  
-<!-- HERO SECTION -->
+
+  <!-- HERO SECTION -->
   <main>
-    <div class="relative ">
-      <img class="" src="images/hero-photo.png" alt="mizael">
-      <div class="absolute inset-3 flex flex-col items-start justify-center">
-        <span class="text-text text-4xl font-bold">MIZAEL</span>
-        <span class="text-text text-4xl font-bold">TILOS</span>
-        <span class="text-muted text-xs ">WEB DEVELOPER & CREATIVE</span>
-        <span class="text-muted">I build clean, responsive websites with</span>
-        <span class="text-muted">a focus on thoughtful design and</span>
-        <span class="text-muted">user experience</span>
-        <button class="text-text bg-[var(--color-primary)]">VIEW MY WORK</button>
+    <section class="relative overflow-hidden bg-background">
+
+      <!-- DESKTOP HERO -->
+      <div class="relative hidden min-h-[calc(100vh-60px)] md:block">
+
+        <!-- DESKTOP PHOTO - FULL WIDTH -->
+        <img class="absolute inset-0 h-full w-full object-cover [mask-image:linear-gradient(to_bottom,transparent_0%,black_18%,black_100%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_18%,black_100%)]" 
+        src="images/hero-photo-desktop-view.jpg" 
+        alt="Mizael"
+      >
+        <!-- DESKTOP TEXT - ON TOP OF PHOTO -->
+        <div class="relative z-10 flex min-h-[calc(100vh-60px)] items-center px-12">
+          <div>
+            <h1 class="font-primary text-6xl font-bold leading-[0.9] text-text">MIZAEL<br>TILOS</h1>
+            <p class="mt-5 font-secondary text-xs tracking-[0.35em] text-text">WEB DEVELOPER & CREATIVE</p>
+            <p class="mt-4 max-w-sm font-secondary text-sm leading-relaxed text-text">I build clean, responsive websites with a focus on thoughtful design and user experience.</p>
+            <button class="mt-6 bg-[var(--color-primary)] px-5 py-3 font-secondary text-xs font-medium tracking-wider text-text transition-opacity duration-200 hover:opacity-80">VIEW MY WORK →</button>
+          </div>
+        </div>
       </div>
-    </div>
-     
+
+      <!-- MOBILE HERO -->
+      <div class="block md:hidden">
+
+        <!-- MOBILE CONTENT -->
+        <div class="px-2 pt-6">
+          <h1 class="font-primary text-5xl font-bold leading-[0.9]">MIZAEL<br>TILOS</h1>
+          <p class="mt-3 font-secondary text-[10px] tracking-[0.35em] text-muted font-bold">WEB DEVELOPER & CREATIVE</p>
+          <p class="mt-4 max-w-xs font-secondary text-sm leading-relaxed text-muted">I build clean, responsive websites with a focus on thoughtful design and user experience.</p>
+          <button class="mt-5 bg-[var(--color-primary)] px-8 py-3 font-secondary text-[10px] font-medium tracking-wider text-text transition-opacity duration-200 hover:opacity-80">VIEW MY WORK →</button>
+        </div>
+
+        <!-- MOBILE PHOTO -->
+        <div class="relative bg-background">
+          <img class="block h-[300px] w-full object-cover object-top [mask-image:linear-gradient(to_bottom,transparent_0%,black_18%,black_100%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_18%,black_100%)]" 
+          src="images/hero-photo-mobile-view.jpg" 
+          alt="Mizael">
+        </div>
+
+      </div>
+    </section>
 
   </main>
+  
 
-</body>
 </html>
