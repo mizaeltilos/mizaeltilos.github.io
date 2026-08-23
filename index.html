@@ -30,21 +30,21 @@
 <body class="min-h-screen bg-background text-text">
 
   <!-- HEADER SECTION-->
-  <header class="relative z-50 m-3">
+  <header class="relative z-50 mt-4 mx-5 lg:mt-5 lg:mx-10">
     <nav class="flex items-center justify-between text-text">
-      <a class="font-primary text-xs font-bold" href="">MIZAEL TILOS</a>
+      <a class="font-primary text-sm font-bold" href="">MIZAEL TILOS</a>
 
       <div class="relative">
         <!-- HAMBURGER ICON -->
         <input class="peer hidden" type="checkbox" id="menu-toggle">
         <label class="cursor-pointer text-text lg:hidden" for="menu-toggle">
-          <i class="fa-solid fa-bars"></i>
+          <i class="text-xl fa-solid fa-bars"></i>
         </label>
 
         <!-- NAV LINKS -->
         <div class="absolute right-0 top-7 hidden w-25 flex-col items-end gap-4 bg-surface p-5 peer-checked:flex lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-10 lg:bg-transparent lg:p-0">
-          <a class="text-xs text-text transition-colors duration-1  hover:text-[var(--color-primary)] hover:underline" href="">DEVELOPER</a>
-          <a class="text-xs text-text transition-colors duration-200 hover:text-[var(--color-primary)] hover:underline" href="">ACTOR</a>
+          <a class=" text-xs text-text transition-colors duration-1  hover:text-[var(--color-primary)] hover:underline" href="">DEVELOPER</a>
+          <a class="text-xs text-text transition-colors duration-200 hover:text-[var(--color-primary)] hover:underline" href="actor.html">ACTOR</a>
           <a class="text-xs text-text transition-colors duration-200 hover:text-[var(--color-primary)] hover:underline" href="">MUSICIAN</a>
         </div>
       </div>
@@ -65,7 +65,7 @@
       >
         <!-- DESKTOP TEXT - ON TOP OF PHOTO -->
         <div class="relative z-10 flex min-h-[calc(100vh-60px)] items-center px-12">
-          <div>
+          <div class="">
             <h1 class="font-primary text-6xl font-bold leading-[0.9] text-text">MIZAEL<br>TILOS</h1>
             <p class="mt-5 font-secondary text-xs tracking-[0.35em] text-text">WEB DEVELOPER & CREATIVE</p>
             <p class="mt-4 max-w-sm font-secondary text-sm leading-relaxed text-text">I build clean, responsive websites with a focus on thoughtful design and user experience.</p>
@@ -78,7 +78,7 @@
       <div class="block md:hidden">
 
         <!-- MOBILE CONTENT -->
-        <div class="px-2 pt-6">
+        <div class="px-2 pt-6 ml-3">
           <h1 class="font-primary text-5xl font-bold leading-[0.9]">MIZAEL<br>TILOS</h1>
           <p class="mt-3 font-secondary text-[10px] tracking-[0.35em] text-muted font-bold">WEB DEVELOPER & CREATIVE</p>
           <p class="mt-4 max-w-xs font-secondary text-sm leading-relaxed text-muted">I build clean, responsive websites with a focus on thoughtful design and user experience.</p>
@@ -91,11 +91,94 @@
           src="images/hero-photo-mobile-view.jpg" 
           alt="Mizael">
         </div>
-
       </div>
     </section>
+    
+
+    <!-- ABOUT THIS SITE SECTION -->
+    <section class="bg-background px-4 py-7 text-text lg:px-12 lg:py-12 ">
+
+      <div class="mx-auto flex max-w flex-col gap-8  pb-5 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+
+        <!-- ABOUT -->
+        <div class="lg:w-1/2">
+          <p class="font-secondary text-[7px] font-bold tracking-wider text-[var(--color-primary)]">ABOUT THIS SITE</p>
+
+          <h2 class="mt-2 font-primary text-md font-bold ">You're looking at one of my projects.</h2>
+          
+          <p class="mt-2 font-secondary text-[9px] text-muted lg:text-[10px]">This portfolio was designed and developed from scratch as a demonstration of my approach to responsive web development and clean user experience.</p>
+        </div>
+
+        <!-- BUILT WITH -->
+        <div class="lg:w-1/2">
+          <p class="font-secondary text-[7px] font-bold tracking-wider text-[var(--color-primary)]">BUILT WITH</p>
+
+          <div class="mt-4 flex items-start justify-between max-w">
+
+            <!-- HTML5 -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border border-muted text-sm text-text">
+                <i class="fa-brands fa-html5"></i>
+              </div>
+              <span class="font-secondary text-[6px] text-muted">HTML5</span>
+            </div>
+
+            <!-- CSS -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border border-muted text-sm text-text">
+                <i class="fa-brands fa-css3-alt"></i>
+              </div>
+              <span class="font-secondary text-[6px] text-muted">CSS</span>
+            </div>
+
+            <!-- TAILWIND -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border border-muted text-sm text-text">
+                <i class="fa-solid fa-wave-square"></i>
+              </div>
+              <span class="font-secondary text-[6px] text-muted">TAILWIND CSS
+              </span>
+            </div>
+
+            <!-- GIT -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border border-muted text-sm text-text">
+                <i class="fa-brands fa-git-alt"></i>
+              </div>
+              <span class="font-secondary text-[6px] text-muted">GIT</span>
+            </div>
+
+            <!-- GITHUB -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border border-muted text-sm text-text">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <span class="font-secondary text-[6px] text-muted">GITHUB</span>
+            </div>
+  
+          </div>
+
+        </div>
+      </div>
+      
+     <!-- LINE -->
+      <div class="w-full border-b border-surface lg:ml-auto lg:w-1/2"></div>
+
+      <!-- CREDIT -->
+      <div class="flex items-center gap-2 pt-3 lg:ml-auto lg:w-1/2">
+        <i class="fa-regular fa-heart text-xs text-[var(--color-primary)]"></i>
+        <span class="font-secondary text-[8px] text-muted">Designed & coded by me</span>
+      </div>
+    
+    </section>
+
+
+
+
+
 
   </main>
+</body>
   
 
 </html>
