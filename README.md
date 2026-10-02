@@ -29,3 +29,18 @@ To use a custom domain (e.g. `mizaeltilos.com`), add it under **Settings → Pag
 - **Accent colour:** search for `#D9AE55` in all three files.
 
 Fonts load from Google Fonts (Big Shoulders Display, DM Sans, IBM Plex Mono).
+
+## Link previews (Facebook, Threads, Messenger, X)
+
+When someone pastes your link into a social app, the preview card uses the tags at the top of `index.html`
+and the image `images/share-preview.jpg` (1200 × 630).
+
+1. Once you know your site address, open `index.html` and replace every `https://YOUR-DOMAIN.com`
+   with it (for GitHub Pages: `https://<username>.github.io/<repository-name>`). There are 5 places.
+2. Publish the change.
+3. Check it, and refresh the platforms' cached preview:
+   - Facebook / Threads / Messenger: https://developers.facebook.com/tools/debug/ → paste your link → **Scrape Again**
+   - LinkedIn: https://www.linkedin.com/post-inspector/
+   - X: just paste the link into a new post draft to see the card
+
+Apps cache previews for a while, so after changing the image or text, use the tools above to refresh them.
