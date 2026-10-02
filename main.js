@@ -177,4 +177,27 @@
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(email).then(copied, fallback);
     else fallback();
   });
+
+  /* ---------- Scroll reveal (skipped when reduced motion is preferred) ---------- */
+  (function () {
+    try {
+      if (!("IntersectionObserver" in window)) return;
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var sel = "section h2, .stats > *, .pcard, section[aria-label='Profile'] img, #festivals article, .mfest > *, .mcom > *, .mmv > *, .mlist > *, #stage article, #credits table";
+      var els = Array.prototype.filter.call(document.querySelectorAll(sel), function (el) { return !el.closest("#top"); });
+      var vh = window.innerHeight || 800;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.setAttribute("data-rv", "in"); obs.unobserve(en.target); }
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+      els.forEach(function (el) {
+        if (el.getBoundingClientRect().top < vh * 0.92) return;
+        var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+        el.style.transitionDelay = (Math.min(sib, 5) % 4) * 70 + "ms";
+        el.setAttribute("data-rv", "");
+        obs.observe(el);
+      });
+    } catch (e) {}
+  })();
 })();
