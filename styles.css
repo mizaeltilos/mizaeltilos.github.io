@@ -1,0 +1,65 @@
+/* Mizael Tilos portfolio — global styles.
+   Most layout styles are inline in index.html; these cover hover states and phone/tablet layouts. */
+body{margin:0;background:#0F0E0D}
+html{scroll-behavior:smooth}
+a{color:#EDE7DD}a:hover{color:#D9AE55}
+section[id],footer[id]{scroll-margin-top:84px}
+@media (max-width: 859px){.nav-links{display:none !important}.menu-btn{display:inline-flex !important}.logo{font-size:22px !important}.book{padding:10px 16px !important;font-size:13px !important}}
+@media (min-width: 860px){.menu-panel{display:none !important}}
+@media (max-width: 900px){.stats{grid-template-columns:repeat(3,minmax(0,1fr)) !important}}
+@media (max-width: 640px){
+.fbtns{display:grid !important;grid-template-columns:1fr 1fr;gap:10px !important;width:100%}
+.fbtns>*{justify-content:center !important;padding:0 12px !important}
+.fbtns>a.soc{grid-column:1/-1}
+.fsoc{display:grid !important;grid-template-columns:1fr 1fr;gap:10px !important;width:100%}
+.fsoc>a{justify-content:center !important;padding:0 12px !important}
+.fsoc>a>svg:last-child{display:none}
+#contact>div{align-items:stretch !important}
+#contact p[role=status]:empty{display:none}
+.ctabs{display:none !important}
+.csel-wrap{display:block !important}
+.mcom{grid-auto-rows:1fr}
+.mcom>figure{background:#161412;border:1px solid #2A2724;border-radius:12px;overflow:hidden;gap:0 !important;height:100%}
+.mcom>figure>a{border-radius:0 !important}
+.mcom figcaption{padding:8px 10px 4px;flex:1}
+.mcom figcaption>a{margin-top:auto}
+.mlist{grid-template-columns:1fr !important;gap:10px !important}
+.mlist>figure{flex-direction:row !important;align-items:center;border-radius:12px !important}
+.mlist>figure>a{flex:0 0 92px;width:92px}
+.mlist>figure>a img{aspect-ratio:1/1 !important;width:92px;height:92px}
+.mlist .playov>span{width:40px !important;height:40px !important}
+.mlist figcaption{flex:1;min-width:0;padding:8px 14px !important;gap:6px !important}
+.mlist figcaption>a{min-height:36px !important;font-size:13px !important}
+.m2{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:14px 10px !important}
+.mfirst>:first-child{grid-column:1/-1}
+.m2 figcaption>div{flex-direction:column !important;gap:2px !important}
+.m2 figcaption{font-size:13px;line-height:1.35}
+.m2 figcaption a{font-size:12px !important;min-height:36px !important}
+.mfest h3{font-size:20px !important}
+.mfest article>div{padding:10px !important}
+.mfest p{font-size:12px !important}
+.mfest article a{font-size:12px !important}
+.mfirst>:first-child h3{font-size:26px !important}
+.mfest>:first-child img{aspect-ratio:3/2 !important}
+.mfirst>:first-child figcaption{font-size:15px}
+.stats{gap:8px !important}
+.stat{padding:12px !important;border-radius:12px !important}
+.statn{font-size:36px !important}
+.statl{font-size:13px !important;margin-top:4px !important}
+.kv{grid-template-columns:1fr !important;gap:2px 0 !important}
+.kv>div:nth-child(odd){padding-top:12px !important}
+.kv>div:first-child{padding-top:0 !important}
+.pcard{padding:20px !important}
+.ctable{min-width:0 !important}
+.ctable thead{display:none}
+.ctable tr{display:block;padding:16px 18px;border-bottom:1px solid #322D28}
+.ctable td{display:block;padding:2px 0 !important;border:0 !important;text-align:left !important;white-space:normal !important}
+.ctable td:first-child{font-size:16px;padding-bottom:6px !important}
+.ctable td[data-label]::before{content:attr(data-label) "  ";font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#7E776E}
+.ctable td:last-child{padding-top:6px !important}
+.ctab{min-width:112px !important;font-size:14px !important}
+}
+.ctab[aria-selected="false"]:hover{background:#2A2622 !important;color:#EDE7DD !important;z-index:9 !important}
+.soc:hover{border-color:#D9AE55 !important;color:#D9AE55 !important;background:#1C1A17}
+.soc:focus-visible{outline:2px solid #EDE7DD;outline-offset:2px}
+.ctab:focus-visible{outline:2px solid #EDE7DD;outline-offset:2px}
