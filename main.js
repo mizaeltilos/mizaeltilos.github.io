@@ -1,62 +1,6 @@
 (function () {
   "use strict";
   var ACCENT = "#D9AE55";
-  var DATA = {
-      film: [
-        ["Sutsot", "Lead — Brian", "Kislap Films (UST)", "Xzarriane Lim", "Mar 2017"],
-        ["Isa't Kalahati", "Lead — Ian (Imaginary Son)", "Frankie's Angels (DLSU Lipa)", "Judy Ann Hernandez", "Jan 2019"],
-        ["The End \"Lunod\"", "Lead — Choi", "Adober Studios – ABS-CBN", "Rai Clemente", "Mar 2019"],
-        ["Gugma", "Lead — Anton (Albularyo's Son)", "Moviesaurus Production (UST)", "Paolo Valera", "Apr 2019"],
-        ["Istorya ng Pagkawala", "Lead — Mizael (Manglalakbay)", "Binhi Productions (FEU)", "Novi Francisco", "Apr 2019"],
-        ["Stalker", "Lead", "OgieD Productions Inc.", "Ogie Diaz", "Aug 2019"],
-        ["Limbo", "Lead — Anton (Beggar)", "Jerks Production", "Luke Miraflor", "Sep 2019"],
-        ["Tao Po", "Lead — Nico (Spirit)", "Illuminare Production", "Mizael Tilos", "Jun 2021"],
-        ["Arcanghel", "Lead — Romeo", "Arcanghel Production (Mapúa)", "Theophany Dionisio", "Jun 2022"],
-        ["All The Things Left Unsaid", "Lead", "Recto Pictures", "Josh Van Ulric Campo", "Dec 2022"]
-      ],
-      tv: [
-        ["Luv U", "Bit — Guitarist Student", "ABS-CBN", "Edgar Mortiz", "2015 – 2016"],
-        ["MMK \"Spoken Words\"", "Bit — Student Bully", "ABS-CBN", "—", "Nov 2015"],
-        ["All Of Me", "Bit — Student Bully", "ABS-CBN", "Dondon Santos", "Dec 2015"],
-        ["And I Love You So", "Bit — Friend of Kenzo", "ABS-CBN", "Onat Diaz", "—"],
-        ["Class 3C Has A Secret", "Bit — Student Bully", "ABS-CBN", "—", "—"],
-        ["Be My Lady", "Bit — Nephew of Yayo", "ABS-CBN", "Theodore Boborol", "Mar 2016"],
-        ["Home Sweetie Home", "Bit — Store Staff", "ABS-CBN", "Edgar Mortiz", "Jan 2018"],
-        ["Ipaglaban Mo \"Hazing\"", "Bit — Frat Student", "ABS-CBN", "Ludwig Peralta", "Jan 2018"]
-      ],
-      ads: [
-        ["Nature Spring (Flavored)", "Support", "Nature Spring", "—", "2016"],
-        ["Dahil Kay Ma'am", "Lead — CJ Tolentino", "Vibal Group Inc.", "Luke Miraflor", "Oct 2017"],
-        ["Pei Pa Koa", "Lead", "Pei Pa Koa", "Silver Belen", "Jul 2019"],
-        ["Everything But Cheese", "Lead", "Arkos Digital", "Ken Leviste", "Mar 2021"],
-        ["Globe (Reinvented Globe Rewards)", "Support", "Arcade Film Factory Inc.", "—", "Mar 2021"],
-        ["Chippy", "Lead", "Universal Robina Corporation", "—", "Apr 2021"],
-        ["Netflix — May K Ka Pala: Kingdom", "Support", "Gigil Production", "Rae Red", "Apr 2022"],
-        ["Smart", "Support", "—", "—", "Feb 2023"],
-        ["Samsung Galaxy A34 / A54 5G", "Lead", "—", "—", "Nov 2023"],
-        ["Netflix — Okey ka Kokey!", "Support", "Gigil Production", "Marius Talampas", "Dec 2023"],
-        ["Jollibee (Yum Burger)", "Lead", "—", "—", "Apr 2024"],
-        ["PS Bank", "Lead", "—", "—", "Aug 2024"],
-        ["Cobra", "Support", "—", "Sid Maderazo", "Jul 2025"]
-      ],
-      stage: [
-        ["Ambon ng Kristal", "Lead — Ambet", "Vineyard Production", "Bong Ramos", "2017 – 2020"],
-        ["#FourthEver", "Lead — Danda", "Vineyard Production", "Bong Ramos", "2017 – 2020"],
-        ["Solo Para Adultos", "Support — Young Veronica", "Red Lantern Production", "Bong Ramos", "2018"],
-        ["Hindi Ito Senakulo (Jesus Christ Superstar, Tagalog Adaptation)", "Lead — Ryan, Jesus Christ & Judas", "Edukultura Entertainment", "Bong Ramos", "2024 – present"],
-        ["Ang Tatlong Hari (Musical)", "Support — Jasper", "Pamahalaang Lungsod ng Pasig", "Bong Ramos", "2025"]
-      ],
-      mv: [
-        ["Bawat Kaluluwa (IV of Spades)", "Lead", "Twofold Production", "Raymond Dacones", "Jan 2019"],
-        ["Sigurado (Imago)", "Lead", "Universal Records", "Dan Angelo Eligado", "May 2021"],
-        ["Dahan-Dahan (Mizael)", "Lead / Artist", "Universal Records PH", "—", "2023"]
-      ],
-      dir: [
-        ["Tao Po", "Writer / Director", "Illuminare Production", "2nd Best Eastern Visayan Film (Experimental), Pambujan Int'l Film Festival (Mar 2022)", "Jun 2021"],
-        ["VR Animation", "Director", "Unfold Production", "—", "Jul 2024"],
-        ["My Superman (MV)", "Director", "—", "—", "Dec 2024"]
-      ]
-    };
 
   /* ---------- Mobile menu ---------- */
   var menuBtn = document.getElementById("menuBtn");
@@ -86,20 +30,20 @@
   var tablist = document.querySelector(".ctabs");
   var select = document.getElementById("credit-category-m");
   var tbody = document.getElementById("creditRows");
-  var total = 0;
-  Object.keys(DATA).forEach(function (k) { total += DATA[k].length; });
-  document.getElementById("total").textContent = total;
+  var allRows = tbody.querySelectorAll("tr");
+  function countOf(cat) { return tbody.querySelectorAll('tr[data-cat="' + cat + '"]').length; }
+  document.getElementById("total").textContent = allRows.length;
 
   function esc(t) { var d = document.createElement("div"); d.textContent = t; return d.innerHTML; }
 
   defs.forEach(function (def) {
     var b = document.createElement("button");
     b.type = "button"; b.className = "ctab"; b.setAttribute("role", "tab"); b.dataset.cat = def[0];
-    b.innerHTML = esc(def[1]) + '<span class="chip">' + DATA[def[0]].length + "</span>";
+    b.innerHTML = esc(def[1]) + '<span class="chip">' + countOf(def[0]) + "</span>";
     b.addEventListener("click", function () { renderCredits(def[0]); });
     tablist.appendChild(b);
     var o = document.createElement("option");
-    o.value = def[0]; o.textContent = def[1] + " (" + DATA[def[0]].length + ")";
+    o.value = def[0]; o.textContent = def[1] + " (" + countOf(def[0]) + ")";
     select.appendChild(o);
   });
   select.addEventListener("change", function () { renderCredits(select.value); });
@@ -118,28 +62,23 @@
     var h = id === "dir" ? { role: "Credit", dir: "Recognition" } : { role: "Role", dir: "Director" };
     document.querySelector('[data-h="role"]').textContent = h.role;
     document.querySelector('[data-h="dir"]').textContent = h.dir;
-    var rows = DATA[id].slice().reverse();
-    var td = "padding: 14px 18px; border-bottom: 1px solid #322D28; ";
-    tbody.innerHTML = rows.map(function (r) {
-      return "<tr>" +
-        '<td style="' + td + 'font-weight: 700">' + esc(r[0]) + "</td>" +
-        '<td style="' + td + 'color: #CFC8BD" data-label="' + h.role + '">' + esc(r[1]) + "</td>" +
-        '<td style="' + td + 'color: #CFC8BD" data-label="Production">' + esc(r[2]) + "</td>" +
-        '<td style="' + td + 'color: #CFC8BD" data-label="' + h.dir + '">' + esc(r[3]) + "</td>" +
-        '<td style="' + td + "font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #A39C92; text-align: right; white-space: nowrap\">" + esc(r[4]) + "</td>" +
-        "</tr>";
-    }).join("");
-    document.getElementById("rowCount").textContent = rows.length;
+    var count = 0;
+    tbody.querySelectorAll("tr").forEach(function (tr) {
+      var show = tr.dataset.cat === id;
+      tr.hidden = !show;
+      if (show) count++;
+    });
+    document.getElementById("rowCount").textContent = count;
   }
   renderCredits("film");
 
   /* ---------- Carousels ---------- */
   var carousels = {
-    sen: { photos: ["images/senakulo-1.jpg", "images/senakulo-2.jpg", "images/senakulo-3.jpg", "images/senakulo-4.jpg", "images/senakulo-5.jpg"], i: 0, off: "#4A4540", label: "Hindi Ito Senakulo production photo " },
-    hari: { photos: ["images/tatlong-hari-1.jpg", "images/tatlong-hari-2.jpg", "images/tatlong-hari-3.jpg"], i: 0, off: "#4A4540", label: "Ang Tatlong Hari production photo " },
-    thea: { photos: ["images/ambon-fourthever-1.jpg", "images/ambon-fourthever-2.jpg"], i: 0, off: "#4A4540", label: "Ambon ng Kristal & #FourthEver production photo " },
+    sen: { photos: ["images/senakulo-1.webp", "images/senakulo-2.webp", "images/senakulo-3.webp", "images/senakulo-4.webp", "images/senakulo-5.webp"], i: 0, off: "#4A4540", label: "Hindi Ito Senakulo production photo " },
+    hari: { photos: ["images/tatlong-hari-1.webp", "images/tatlong-hari-2.webp", "images/tatlong-hari-3.webp"], i: 0, off: "#4A4540", label: "Ang Tatlong Hari production photo " },
+    thea: { photos: ["images/ambon-fourthever-1.webp", "images/ambon-fourthever-2.webp"], i: 0, off: "#4A4540", label: "Ambon ng Kristal & #FourthEver production photo " },
     dahil: {
-      photos: ["images/dahil-kay-maam.jpg", "images/dahil-kay-maam-adobo-finalist.jpg"],
+      photos: ["images/dahil-kay-maam.webp", "images/dahil-kay-maam-adobo-finalist.webp"],
       alts: ["Still from Dahil Kay Ma'am, Vibal Group ad", "Adobo VideoFest 2021 finalist poster for Dahil Kay Ma'am"],
       i: 0, off: "#6A645D", fade: true, playing: true, hovering: false
     }
