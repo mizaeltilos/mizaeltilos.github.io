@@ -1,5 +1,10 @@
 /* Mizael Tilos portfolio — global styles.
    Most layout styles are inline in index.html; these cover hover states and phone/tablet layouts. */
+/* Images: the width/height attributes in index.html only reserve space while loading.
+   height:auto lets each image keep the shape set by its inline aspect-ratio. */
+img{height:auto}
+/* Keep hidden credit rows hidden on phones, where rows are shown as stacked cards. */
+.ctable tr[hidden]{display:none !important}
 body{margin:0;background:#0F0E0D}
 html{scroll-behavior:smooth}
 a{color:#EDE7DD}a:hover{color:#D9AE55}
