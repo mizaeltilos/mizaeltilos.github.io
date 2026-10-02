@@ -4,7 +4,8 @@ body{margin:0;background:#0F0E0D}
 html{scroll-behavior:smooth}
 a{color:#EDE7DD}a:hover{color:#D9AE55}
 section[id],footer[id]{scroll-margin-top:84px}
-@media (max-width: 859px){.nav-links{display:none !important}.menu-btn{display:inline-flex !important}.logo{font-size:22px !important}.book{padding:10px 16px !important;font-size:13px !important}}
+@media (max-width: 859px){.nav-links{display:none !important}.menu-btn{display:inline-flex !important;width:40px !important;height:40px !important}.topnav{padding:10px 16px !important;gap:8px !important}.logo{font-size:21px !important;letter-spacing:0.03em !important;min-width:0;overflow:hidden;text-overflow:ellipsis}.book{padding:0 14px !important;min-height:40px !important;font-size:13px !important}.menu-panel{padding:4px 16px 20px !important}}
+@media (max-width: 360px){.logo{font-size:19px !important}.book{padding:0 12px !important;font-size:12px !important}}
 @media (min-width: 860px){.menu-panel{display:none !important}}
 @media (max-width: 900px){.stats{grid-template-columns:repeat(3,minmax(0,1fr)) !important}}
 @media (max-width: 640px){
@@ -27,7 +28,12 @@ section[id],footer[id]{scroll-margin-top:84px}
 .mlist>figure{flex-direction:row !important;align-items:center;border-radius:12px !important}
 .mlist>figure>a{flex:0 0 92px;width:92px}
 .mlist>figure>a img{aspect-ratio:1/1 !important;width:92px;height:92px}
-.mlist .playov>span{width:40px !important;height:40px !important}
+.mlist .playov>span{width:32px !important;height:32px !important}
+.mlist .playov svg{width:12px;height:12px}
+.m2 a>span[aria-hidden="true"]>span{width:34px !important;height:34px !important}
+.m2 a>span[aria-hidden="true"]>span svg{width:13px;height:13px}
+.mfirst>:first-child a>span[aria-hidden="true"]>span{width:42px !important;height:42px !important}
+.mfirst>:first-child a>span[aria-hidden="true"]>span svg{width:15px;height:15px}
 .mlist figcaption{flex:1;min-width:0;padding:8px 14px !important;gap:6px !important}
 .mlist figcaption>a{min-height:36px !important;font-size:13px !important}
 .m2{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:14px 10px !important}

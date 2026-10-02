@@ -60,19 +60,22 @@
 
   /* ---------- Mobile menu ---------- */
   var menuBtn = document.getElementById("menuBtn");
-  var menu = document.getElementById("mobile-menu");
+  var menuWrap = document.getElementById("menuWrap");
+  var menuOpen = false;
   function setMenu(open) {
-    if (!menu || !menuBtn) return;
-    menu.hidden = !open;
+    if (!menuWrap || !menuBtn) return;
+    menuOpen = open;
+    menuWrap.style.display = open ? "contents" : "none";
     menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
     menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     menuBtn.querySelector(".ic-open").style.display = open ? "none" : "flex";
     menuBtn.querySelector(".ic-close").style.display = open ? "flex" : "none";
   }
-  if (menuBtn) menuBtn.addEventListener("click", function () { setMenu(menu.hidden); });
-  document.querySelectorAll("[data-close-menu]").forEach(function (a) {
-    a.addEventListener("click", function () { setMenu(false); });
+  if (menuBtn) menuBtn.addEventListener("click", function () { setMenu(!menuOpen); });
+  document.querySelectorAll("[data-close-menu]").forEach(function (el) {
+    el.addEventListener("click", function () { setMenu(false); });
   });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menuOpen) setMenu(false); });
 
   /* ---------- Full credits ---------- */
   var defs = [["film", "Film"], ["tv", "Television"], ["ads", "Commercial"], ["stage", "Theatre"], ["mv", "Music video"], ["dir", "Directing"]];
