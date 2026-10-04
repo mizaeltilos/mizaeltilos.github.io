@@ -1,4 +1,4 @@
+# Crawling stays allowed so search engines can see the "noindex" tag in index.html
+# and remove the page from their results. Do not block crawling here.
 User-agent: *
 Allow: /
-
-Sitemap: https://mizaeltilos.github.io/sitemap.xml

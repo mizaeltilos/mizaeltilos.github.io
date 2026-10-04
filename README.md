@@ -5,13 +5,12 @@ Static portfolio site (plain HTML, CSS and JavaScript — no build step, no depe
 ## Files
 
 ```
-index.html          page content, layout, SEO and link-preview tags
+index.html          page content, layout, link-preview tags and the noindex tag
 styles.css          hover states and phone/tablet layouts
 main.js             credits tabs/dropdown, photo carousels, mobile menu, copy-email button
 images/             photos, posters and stills (WebP) + share-preview.jpg for link previews
 404.html            branded "page not found" page
-robots.txt          tells search engines they may index the site
-sitemap.xml         helps Google find the page
+robots.txt          lets search engines read the noindex tag (do not block crawling)
 favicon.ico, *.png  browser tab icon and phone home-screen icons
 site.webmanifest    name and icons when saved to a phone home screen
 ```
@@ -42,7 +41,7 @@ When someone pastes your link into a social app, the preview card uses the tags 
 and the image `images/share-preview.jpg` (1200 × 630).
 
 1. The site address is set to `https://mizaeltilos.github.io`. If it changes (for example to a custom domain),
-   search-and-replace it in `index.html`, `robots.txt` and `sitemap.xml`.
+   search-and-replace it in `index.html`.
 2. Publish the change.
 3. Check it, and refresh the platforms' cached preview:
    - Facebook / Threads / Messenger: https://developers.facebook.com/tools/debug/ → paste your link → **Scrape Again**
@@ -51,11 +50,8 @@ and the image `images/share-preview.jpg` (1200 × 630).
 
 Apps cache previews for a while, so after changing the image or text, use the tools above to refresh them.
 
-## SEO checklist after launch
+## Search engines
 
-1. Make sure the repository is named exactly `mizaeltilos.github.io` (see "Publish on GitHub Pages").
-2. Set up Google Search Console (https://search.google.com/search-console), verify the site,
-   and submit `https://your-domain/sitemap.xml`.
-3. Test the structured data at https://search.google.com/test/rich-results.
-4. Add the site link to your Instagram, TikTok, YouTube, Facebook and Spotify artist bios, and to IMDb.
-
+The site is set to **not appear in Google or other search engines** (`<meta name="robots" content="noindex, nofollow">`
+in `index.html`). Link previews on Facebook, Threads, Messenger and X still work.
+To allow search engines again later, delete that one line.
